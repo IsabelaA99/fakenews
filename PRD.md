@@ -25,7 +25,7 @@ Não prometer precisão absoluta ou inferir intenção de enganar. Não consider
 Áudio, vídeo, deepfakes complexos, extensão de navegador e chatbot ficam fora da entrega principal. Imagens são uma extensão opcional.
 
 ## Abordagem prevista
-Modelo simples treinado pelo grupo para avaliação acadêmica e API de IA auxiliar para identificação da alegação e explicação das evidências. Coleção selecionada pelo grupo com busca online complementar. Provedores e implementação ainda serão definidos.
+Modelo simples treinado pelo grupo para avaliação acadêmica e API de IA auxiliar para identificação da alegação e explicação das evidências. Coleção selecionada pelo grupo com busca online complementar. A especificação registra Groq, Tavily e Render como escolhas provisórias para o piloto; cotas, qualidade e operação ainda precisam ser validadas. Não há integração ativa no portal.
 
 ## Metas provisórias
 - Superar um classificador básico em Macro F1 em um conjunto de avaliação separado.

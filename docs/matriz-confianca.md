@@ -24,6 +24,11 @@ A inclusão de nota está prevista no produto, mas pesos, cálculo e condições
 
 Orientar a consulta às fontes ou adição de contexto. Ausência de evidências não deve ser substituída por nota zero, neutra ou inventada.
 
+## Registro mínimo de uma avaliação
+Para tornar a investigação revisável, cada caso deverá registrar a alegação confirmada, as fontes efetivamente consultadas, a data da consulta, a relação das evidências com a alegação e as limitações encontradas. Fonte não consultada não deve aparecer como evidência utilizada.
+
+## Exemplo didático de insuficiência
+Se uma alegação chegar sem contexto e a consulta não localizar evidências suficientes, a proposta é apresentar “Análise em aberto”. O usuário poderá adicionar contexto ou consultar as fontes disponíveis. Esse exemplo descreve o comportamento pretendido; não é um caso real já analisado.
+
 ## Sinais de alerta
 Tom alarmista, ausência de data e origem desconhecida são motivos para investigar. Isoladamente, não comprovam falsidade.
-

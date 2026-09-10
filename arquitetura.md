@@ -1,5 +1,5 @@
 # Como funciona
-Arquitetura proposta do Fake Eyes · versão 0.2
+Arquitetura proposta do Fake Eyes · versão 0.3
 
 ## O que está funcionando hoje
 Este portal publica documentação em HTML e CSS no GitHub Pages. Os textos Markdown são convertidos por um script Node.js e publicados pelo GitHub Actions. O portal não analisa notícias, não envia textos a APIs e não coleta respostas.
@@ -12,6 +12,11 @@ Este portal publica documentação em HTML e CSS no GitHub Pages. Os textos Mark
 5. O resultado apresenta fontes, contexto, categoria e limitações; nota somente quando houver base definida.
 6. Resumo e resultado são salvos no navegador, com exclusão pelo usuário.
 
+## Entrada e validação
+A especificação prevê uma notícia por análise e limite inicial de 10.000 caracteres para texto colado, com contador visível e aviso de excesso. O texto não deve ser cortado silenciosamente. Interface e serviço deverão aplicar a mesma regra; o tratamento de artigos longos extraídos de URLs ainda precisa ser definido.
+
+Esse fluxo é um requisito do analisador futuro. Não há campo de análise ativo neste portal.
+
 ## Componentes propostos
 | Componente | Responsabilidade | Estado |
 | --- | --- | --- |
@@ -19,13 +24,13 @@ Este portal publica documentação em HTML e CSS no GitHub Pages. Os textos Mark
 | Serviço de análise | Coordenar consulta, limites, erros e explicações | Planejado; hospedagem pendente |
 | Coleção de evidências e busca | Oferecer referências rastreáveis e contexto | Fontes candidatas |
 | Modelo simples | Comparar classificação com uma referência básica | Experimento pendente |
-| API de IA auxiliar | Apoiar alegação e explicação apoiada nas fontes | Provedor pendente |
+| API de IA auxiliar | Apoiar alegação e explicação apoiada nas fontes | Groq escolhido provisoriamente; integração pendente |
 | Histórico local | Guardar resumo e resultado no navegador | Decisão aprovada; implementação pendente |
 
 ## Fronteiras e limitações
 O GitHub Pages hospeda o portal estático. O futuro serviço de análise precisará de infraestrutura separada. Chaves de serviços externos não devem aparecer no código entregue ao navegador.
 
-O histórico previsto não guarda o texto integral e não sincroniza entre aparelhos. A expiração será verificada ao abrir ou usar o site; não há exclusão remota garantida em navegador fechado. Datas e provedor externo ainda serão definidos.
+O histórico previsto não guarda o texto integral e não sincroniza entre aparelhos. A expiração será verificada ao abrir ou usar o site; não há exclusão remota garantida em navegador fechado. Datas ainda serão definidas. As escolhas provisórias de serviços e suas validações pendentes estão descritas em [Tecnologias](docs/tecnologias.md).
 
 ## Quando não for possível analisar
 Se uma URL não puder ser lida, orientar a colagem do texto. Se não houver evidências suficientes, apresentar “Análise em aberto”, explicar a limitação e permitir adicionar contexto. Falhas técnicas não são prova de falsidade.
@@ -35,4 +40,3 @@ Se uma URL não puder ser lida, orientar a colagem do texto. Se não houver evid
 
 ## Base do desenho
 Síntese das decisões registradas na especificação local do grupo. O desenho é uma proposta de implementação, não um sistema já integrado. Consulte também [PRD](PRD.md) e [POC](POC.md).
-

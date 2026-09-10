@@ -21,6 +21,11 @@ O [FakeRecogna](https://huggingface.co/datasets/recogna-nlp/FakeRecogna) é outr
 4. Ajustar a representação textual apenas com os dados de treino.
 5. Preservar o conjunto de teste para avaliação final.
 
+## Ficha de adoção de cada base
+Antes de adotar um conjunto, o grupo deverá registrar: endereço de origem, revisão ou data de obtenção, condições de uso, campos utilizados, significado dos rótulos, transformações e regra de divisão. A aprovação depende dessa revisão, não apenas da disponibilidade pública do arquivo.
+
+## Papel das bases no produto
+As bases de treinamento e a coleção de evidências têm funções distintas. Um conjunto rotulado permite comparar modelos; uma evidência consultável precisa sustentar ou contrariar a alegação específica. O resultado deverá identificar quais referências foram realmente usadas, independentemente da base que treinou o modelo.
+
 ## Limite da evidência
 Classificar textos históricos não valida automaticamente a avaliação de contexto, atualização temporal ou uma nota de verdade. As bases são candidatas de pesquisa e não uma garantia de cobertura do produto.
-

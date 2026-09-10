@@ -6,7 +6,7 @@ from reportlab.lib.utils import simpleSplit
 root = Path(__file__).resolve().parents[1]
 out = root / 'assets' / 'arquitetura-fake-eyes.pdf'
 c = canvas.Canvas(str(out), pagesize=(595,842))
-c.setTitle('Fake Eyes - Arquitetura proposta v0.2')
+c.setTitle('Fake Eyes - Arquitetura proposta v0.3')
 c.setAuthor('Projeto Fake Eyes')
 ink, muted, orange = '#1d3436', '#596c6b', '#b94825'
 def text(x,y,s,size=11,color=ink,font='Helvetica'):
@@ -19,7 +19,7 @@ def frame(page):
     c.setFillColor(HexColor('#f7f6f1')); c.rect(0,0,595,842,fill=1,stroke=0)
     text(51,790,'FAKE EYES / CADERNO DE PROJETO',10,orange,'Helvetica-Bold')
     c.setStrokeColor(HexColor('#dce0d8')); c.line(51,63,544,63)
-    text(51,43,'Arquitetura proposta - v0.2 - 10/09/2026',9,muted)
+    text(51,43,'Arquitetura proposta - v0.3 - 10/09/2026',9,muted)
     text(514,43,f'{page} / 2',9,muted)
 frame(1)
 text(51,735,'Da alegação à evidência.',29,ink,'Times-Roman')
@@ -38,11 +38,11 @@ c.showPage(); frame(2)
 text(51,735,'Componentes e limites.',29,ink,'Times-Roman')
 y=700
 for title,body in [
-('Serviço de análise - proposto','Coordenar a entrada, a consulta a evidências, os modelos e o tratamento de falhas. Hospedagem e framework ainda serão definidos; o portal estático não executa esse serviço.'),
+('Serviço de análise - proposto','Coordenar entrada, evidências, modelos e falhas. Render foi escolhido provisoriamente para hospedagem; framework e validação prática estão pendentes. O portal estático não executa esse serviço.'),
 ('IA e fontes - experimentos pendentes','Modelo simples para comparação acadêmica e API auxiliar para alegações e explicações apoiadas nas fontes. Fake.Br, FACTCK.BR e FakeRecogna são candidatos, sujeitos a auditoria e condições de uso.'),
 ('Dados e credenciais','Chaves ficam no serviço, nunca no navegador. O histórico previsto guarda resumo e resultado, sem texto integral ou sincronização entre aparelhos. Informar o envio de conteúdo a serviços externos antes do uso.'),
 ('Incerteza e falhas','Evidência insuficiente gera Análise em aberto, sem percentual inventado. Uma URL inacessível deve levar à orientação de colar o texto. Linguagem emocional, ausência de dados e falha técnica não provam falsidade.'),
-('Decisões ainda em aberto','Provedores, pesos da nota, fontes finais e datas da avaliação. Expiração local será verificada ao abrir ou usar o site; não há exclusão remota garantida de um navegador fechado.'),
+('Escolhas provisórias e pendências','Groq para IA, Tavily para busca e Render para hospedagem são escolhas provisórias, sem integração ativa. Validar cotas e qualidade; definir pesos da nota, fontes finais e datas. Texto colado: limite inicial de 10.000 caracteres.'),
 ('Base e acompanhamento','Síntese da especificação do grupo e dos documentos PRD e POC. Consulte a versão publicada para acompanhar mudanças. Não representa resultado de pesquisa nem arquitetura já integrada.')]:
     text(51,y,title,12,orange,'Helvetica-Bold');y-=23;y=para(body,y,size=10.5);y-=9
 text(51,91,'https://isabelaa99.github.io/fakenews/arquitetura.html',9,muted)
