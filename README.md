@@ -20,6 +20,16 @@ Receber um texto ou link, identificar a alegação com possibilidade de correç�
 - [Questionário](research/questionario.md)
 - [Roteiro de entrevista](research/roteiro-entrevista.md)
 
+## Novos tópicos
+- [Como funciona](arquitetura.md)
+- [Arquitetura em PDF](assets/arquitetura-fake-eyes.pdf)
+- [Explorações](docs/exploracoes.md)
+- [Bases de dados](docs/datasets.md)
+- [Tecnologias](docs/tecnologias.md)
+- [Paradigmas de IA](docs/paradigmas.md)
+- [Como trabalhamos](docs/metodologia.md)
+- [Changelog](docs/changelog.md)
+
 ## Contexto
 Projeto planejado para seis semanas, por uma equipe de cinco integrantes. A pesquisa prevê 20 pessoas distintas: 10 idosos e 10 pessoas de outras faixas etárias. Participação e resultados ainda não foram confirmados.
 
@@ -33,4 +43,3 @@ Endereço esperado após ativação: https://isabelaa99.github.io/fakenews/
 
 ## Atualizar
 Edite os arquivos Markdown mantendo seus nomes. O build gera páginas HTML a partir deles. O portal usa CSS local e não requer serviço pago, chave de API ou dependências externas de build.
-

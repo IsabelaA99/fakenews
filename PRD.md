@@ -35,8 +35,7 @@ Modelo simples treinado pelo grupo para avaliação acadêmica e API de IA auxil
 As metas são propostas de avaliação, não resultados alcançados.
 
 ## Decisões pendentes
-Limites de entrada, pesos da nota, fontes, provedores e histórico sem cadastro. Não há autorização implícita para tornar históricos ou respostas dos participantes públicos.
+Pesos da nota, fontes finais, provedores e datas de avaliação. A especificação local prevê uma notícia por vez e histórico sem cadastro apenas no navegador: resumo e resultado, sem texto integral, com exclusão pelo usuário e sem sincronização entre aparelhos. Implementação e detalhes operacionais continuam pendentes.
 
 ## Entrega atual
 Este GitHub Pages é o portal de documentação. O assistente descrito acima ainda não está implementado.
-
