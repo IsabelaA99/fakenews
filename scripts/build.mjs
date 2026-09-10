@@ -6,6 +6,7 @@ const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const out = resolve(root, '_site');
 const docs = [
   ['README.md', 'Visão geral', 'O problema, a proposta e os limites do projeto.', 'Projeto'],
+  ['relatorio-scrum.md', 'Relatório Scrum', 'Equipe, encontros presenciais, sprints e PDF para baixar.', 'Projeto'],
   ['PRD.md', 'Visão e requisitos', 'Público, escopo e critérios para o produto.', 'Projeto'],
   ['POC.md', 'Prova de conceito', 'Como vamos testar a viabilidade da proposta.', 'Projeto'],
   ['docs/rdo.md', 'Diário do projeto', 'Atividades, decisões e próximos passos.', 'Documentação'],
@@ -76,10 +77,17 @@ function shell(title, content, current = '') {
 mkdirSync(resolve(out, 'assets'), { recursive: true });
 copyFileSync(resolve(root, 'assets/style.css'), resolve(out, 'assets/style.css'));
 copyFileSync(resolve(root, 'assets/arquitetura-fake-eyes.pdf'), resolve(out, 'assets/arquitetura-fake-eyes.pdf'));
+copyFileSync(resolve(root, 'assets/relatorio-scrum.pdf'), resolve(out, 'assets/relatorio-scrum.pdf'));
+copyFileSync(resolve(root, 'assets/print.js'), resolve(out, 'assets/print.js'));
 for (const [p,title] of docs) {
   const content = readFileSync(resolve(root, p), 'utf8');
   mkdirSync(dirname(resolve(out, p)), { recursive: true });
   copyFileSync(resolve(root, p), resolve(out, p));
+  if (p === 'relatorio-scrum.md') {
+    const actions = '<div class="report-actions"><a class="primary" href="assets/relatorio-scrum.pdf" download>Baixar PDF</a><button type="button" id="print-report">Imprimir / Salvar como PDF</button><a href="relatorio-scrum.md">Ver Markdown</a></div><p class="print-help">Para gerar pelo navegador, escolha “Salvar como PDF” na janela de impressão.</p>';
+    writeFileSync(resolve(out,htmlPath(p)),shell(title,actions+`<article>${markdown(content)}</article><script src="assets/print.js"></script>`,p));
+    continue;
+  }
   writeFileSync(resolve(out, htmlPath(p)), shell(title, `<div class="doc-top"><span class="eyebrow">DOCUMENTAÇÃO / VERSÃO INICIAL</span><a href="${p.split('/').at(-1)}">Ver Markdown ↗</a></div><article>${markdown(content)}</article><a class="back" href="${p.includes('/') ? '../' : './'}index.html">← Todos os documentos</a>`, p));
 }
 const cards = docs.slice(1).map(([p,t,desc,g],i) => `<a class="card" href="${htmlPath(p)}"><div><span class="card-num">${String(i+1).padStart(2,'0')}</span><span class="card-group">${g}</span><span class="arrow" aria-hidden="true">↗</span></div><h3>${t}</h3><p>${desc}</p></a>`).join('');

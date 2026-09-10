@@ -1,6 +1,10 @@
 # Changelog
 Histórico de mudanças do portal
 
+## 0.4 · 10/09/2026 · Relatório Scrum
+- Publicado o relatório com funções propostas, agenda presencial e três sprints.
+- Adicionadas opções para baixar o PDF e imprimir ou salvar pelo navegador.
+
 ## 0.3 · 10/09/2026 · Conteúdo atualizado do projeto
 - Detalhadas as explorações, a matriz de confiança e o papel das bases de dados.
 - Acrescentadas as escolhas provisórias de serviços registradas na especificação local, sem apresentá-las como integrações ativas.

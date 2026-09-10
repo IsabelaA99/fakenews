@@ -10,6 +10,15 @@ execFileSync(process.execPath, [resolve(root, 'scripts/build.mjs')]);
 const site = resolve(root, '_site');
 const docs = ['README', 'PRD', 'POC', 'docs/rdo', 'docs/hipoteses', 'docs/guiding-questions', 'docs/matriz-confianca', 'docs/casos-forenses', 'research/questionario', 'research/roteiro-entrevista'];
 docs.push('arquitetura', 'docs/exploracoes', 'docs/datasets', 'docs/tecnologias', 'docs/paradigmas', 'docs/metodologia', 'docs/changelog');
+docs.push('relatorio-scrum');
+test('Relatório Scrum oferece PDF e impressão', () => {
+  const page = readFileSync(resolve(site, 'relatorio-scrum.html'), 'utf8');
+  assert.match(page, /Baixar PDF/);
+  assert.match(page, /Imprimir \/ Salvar como PDF/);
+  assert.match(page, /assets\/print.js/);
+  assert.match(page, /Pedro Augusto/);
+  assert.equal(readFileSync(resolve(site,'assets/relatorio-scrum.pdf')).subarray(0,5).toString(),'%PDF-');
+});
 test('@spec:AC-101 Todos os documentos são legíveis e têm fonte Markdown', () => {
   for (const doc of docs) {
     assert.ok(readFileSync(resolve(root, doc + '.md'), 'utf8').length > 200);
